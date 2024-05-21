@@ -1,6 +1,3 @@
-# connect-go-and-grpc
-An demo of showing the differences between a simple client-server implementation using connect-go versus using gRPC-go
-
 # `gRPC-go` vs `Connect-go` Demo
 This project demonstrates the implementation of a simple API using two different frameworks: gRPC and Connect-go. Both implementations provide a basic greeting service that accepts a name as input and returns a personalized greeting message.
 
@@ -15,18 +12,18 @@ This project demonstrates the implementation of a simple API using two different
 - Contributing
 
 ## Introduction
-The purpose of this project is to compare the usage and performance of two popular frameworks for building APIs: gRPC and Connect-go. Both frameworks offer features such as type-safe communication, code generation, and support for multiple programming languages.
+The purpose of this project is to compare the usage and performance of two popular frameworks for building APIs: `gRPC-go` and `Connect-go`. Both frameworks offer features such as type-safe communication, code generation, and support for multiple programming languages.
 
 ## Features
-gRPC Implementation: Uses gRPC-go to define and implement the greeting service.
-Connect-go Implementation: Uses Connect-go to define and implement the greeting service.
-Client-Server Communication: Demonstrates how clients can communicate with servers using both HTTP/cURL and gRPC commands.
+- gRPC Implementation: Uses gRPC-go to define and implement the greeting service.
+- Connect-go Implementation: Uses Connect-go to define and implement the greeting service.
+- Client-Server Communication: Demonstrates how clients can communicate with servers using both HTTP/cURL and gRPC commands.
 
 ## Setup
 Before running the examples, ensure you have the following prerequisites installed:
-- Go (at least one of the last two major releases)
-- cURL (for HTTP requests)
-- Protocol Buffers compiler (protoc) and the Go plugins for Protocol Buffers (protoc-gen-go)
+- `Go` (at least one of the last two major releases)
+- `cURL` (for HTTP requests)
+- Protocol Buffers compiler (`protoc`) and the Go plugins for Protocol Buffers (`protoc-gen-go`)
 
 ## Usage
 
