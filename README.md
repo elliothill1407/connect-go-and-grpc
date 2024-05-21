@@ -2,14 +2,16 @@
 This project demonstrates the implementation of a simple API using two different frameworks: gRPC and Connect-go. Both implementations provide a basic greeting service that accepts a name as input and returns a personalized greeting message.
 
 ## Table of Contents
-- Introduction
-- Features
-- Setup
-- Usage
-- Running the Servers
-- Making Requests
-- Additional Information
-- Contributing
+- [`gRPC-go` vs `Connect-go` Demo](#grpc-go-vs-connect-go-demo)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Setup](#setup)
+  - [Usage](#usage)
+    - [Running the Servers](#running-the-servers)
+    - [Making Requests](#making-requests)
+    - [Additional Information](#additional-information)
+  - [Contributing](#contributing)
 
 ## Introduction
 The purpose of this project is to compare the usage and performance of two popular frameworks for building APIs: `gRPC-go` and `Connect-go`. Both frameworks offer features such as type-safe communication, code generation, and support for multiple programming languages.
