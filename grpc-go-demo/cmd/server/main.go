@@ -17,7 +17,8 @@ type GreetServer struct {
 
 func (s *GreetServer) Greet(ctx context.Context, req *greetv1.GreetRequest) (*greetv1.GreetResponse, error) {
 	log.Println("Received request for:", req.Name)
-	return &greetv1.GreetResponse{Greeting: fmt.Sprintf("Hello, %s!", req.Name)}, nil
+	res := &greetv1.GreetResponse{Greeting: fmt.Sprintf("Hello, %s!", req.Name)}
+	return res, nil
 }
 
 func main() {

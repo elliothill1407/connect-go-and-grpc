@@ -16,7 +16,8 @@ func main() {
 	}
 	defer conn.Close()
 	client := greetv1.NewGreetServiceClient(conn)
-	res, err := client.Greet(context.Background(), &greetv1.GreetRequest{Name: "Jane"})
+	req := &greetv1.GreetRequest{Name: "Jane"}
+	res, err := client.Greet(context.Background(), req)
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
