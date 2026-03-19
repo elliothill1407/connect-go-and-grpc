@@ -10,7 +10,7 @@ import (
 	"golang.org/x/net/http2"     // import HTTP/2 package
 	"golang.org/x/net/http2/h2c" // import HTTP/2 cleartext (h2c) package
 
-	// import the generated gRPC code for the Greet service (by protoc-gen-go)
+	// import the generated protobuf types for the Greet service (by protoc-gen-go)
 	greetv1 "connect-go-and-grpc/connect-go-demo/gen/greet/v1"
 	// import the generated Connect-Go code for the Greet service (by protoc-gen-connect-go)
 	"connect-go-and-grpc/connect-go-demo/gen/greet/v1/greetv1connect"
