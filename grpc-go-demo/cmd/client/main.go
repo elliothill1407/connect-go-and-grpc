@@ -8,11 +8,12 @@ import (
 	greetv1 "connect-go-and-grpc/grpc-go-demo/gen/greet/v1"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 func main() {
-	// dial the gRPC server at localhost on port 8081 without any transport security
-	conn, err := grpc.Dial("localhost:8081", grpc.WithInsecure())
+	// connect to the gRPC server at localhost on port 8081 without any transport security
+	conn, err := grpc.NewClient("localhost:8081", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
