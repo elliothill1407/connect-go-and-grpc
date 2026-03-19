@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"net/http" // provides HTTP client and server implementations
+	"os"
 
 	"connectrpc.com/connect" // import the Connect package
 
@@ -21,8 +22,12 @@ func main() {
 		"http://localhost:8080",
 	)
 
-	// create a new request with the name "Jane"
-	req := connect.NewRequest(&greetv1.GreetRequest{Name: "Jane"})
+	// use the name provided as a CLI argument, defaulting to "Jane"
+	name := "Jane"
+	if len(os.Args) > 1 {
+		name = os.Args[1]
+	}
+	req := connect.NewRequest(&greetv1.GreetRequest{Name: name})
 
 	// call the Greet method on the client with a background context and the request
 	res, err := client.Greet(context.Background(), req)
