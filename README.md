@@ -27,6 +27,8 @@ The purpose of this project is to compare the usage and performance of two popul
 | Testable with `grpcurl` | Yes | Yes (speaks gRPC protocol too) |
 | Standard `net/http` middleware | No | Yes |
 
+Both frameworks add negligible overhead over raw HTTP/2 + Protobuf. The meaningful performance variable is wire format: Connect-go's JSON mode carries typical JSON serialization cost, but when both frameworks use Protobuf binary over HTTP/2 they are functionally equivalent in throughput and latency.
+
 ## Features
 - gRPC Implementation: Uses gRPC-go to define and implement the greeting service.
 - Connect-go Implementation: Uses Connect-go to define and implement the greeting service.
