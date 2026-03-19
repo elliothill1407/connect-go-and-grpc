@@ -19,6 +19,9 @@ type GreetServer struct {
 
 // implement the Greet method for the GreetServer
 func (s *GreetServer) Greet(ctx context.Context, req *greetv1.GreetRequest) (*greetv1.GreetResponse, error) {
+	// gRPC abstracts HTTP headers away from the handler — accessing them
+	// requires metadata.FromIncomingContext(ctx), unlike Connect-go where
+	// headers are directly available on the request.
 	log.Println("Received request for:", req.Name)
 	res := &greetv1.GreetResponse{Greeting: fmt.Sprintf("Hello, %s!", req.Name)}
 	return res, nil

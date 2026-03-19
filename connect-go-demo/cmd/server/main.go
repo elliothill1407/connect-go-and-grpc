@@ -24,6 +24,8 @@ func (s *GreetServer) Greet(
 	ctx context.Context,
 	req *connect.Request[greetv1.GreetRequest], // the request is of type connect.Request with GreetRequest as the message
 ) (*connect.Response[greetv1.GreetResponse], error) { // the response is of type connect.Response with GreetResponse as the message
+	// Connect-go exposes HTTP headers directly on the request — unlike gRPC,
+	// the handler works within standard HTTP, so headers are first-class.
 	log.Println("Request headers: ", req.Header())
 
 	// create a new response with a greeting message
