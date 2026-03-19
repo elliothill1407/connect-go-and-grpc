@@ -25,8 +25,8 @@ func (s *GreetServer) Greet(ctx context.Context, req *greetv1.GreetRequest) (*gr
 }
 
 func main() {
-	// listen on TCP port 8080
-	lis, err := net.Listen("tcp", ":8080")
+	// listen on TCP port 8081
+	lis, err := net.Listen("tcp", ":8081")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
@@ -36,7 +36,7 @@ func main() {
 
 	// register the GreetServer with the gRPC server
 	greetv1.RegisterGreetServiceServer(s, &GreetServer{})
-	log.Println("Server is running on port 8080...")
+	log.Println("Server is running on port 8081...")
 
 	// start serving requests on listener
 	if err := s.Serve(lis); err != nil {

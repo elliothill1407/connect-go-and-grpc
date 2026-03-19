@@ -11,8 +11,8 @@ import (
 )
 
 func main() {
-	// dial the gRPC server at localhost on port 8080 without any transport security
-	conn, err := grpc.Dial("localhost:8080", grpc.WithInsecure())
+	// dial the gRPC server at localhost on port 8081 without any transport security
+	conn, err := grpc.Dial("localhost:8081", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
