@@ -60,8 +60,11 @@ grpcurl -plaintext -d '{"name": "Jane"}' localhost:8081 greet.v1.GreetService/Gr
 # Connect-go Server (Replace 'Jane' with the desired name)
 curl -X POST -H "Content-Type: application/json" -d '{"name": "Jane"}' http://localhost:8080/greet.v1.GreetService/Greet
 ```
-gRPC Requests
+Go Client Requests
 ```bash
+# Connect-go Server (Replace 'Jane' with the desired name)
+go run ./connect-go-demo/cmd/client/main.go Jane
+
 # gRPC Server (Replace 'Jane' with the desired name)
 go run ./grpc-go-demo/cmd/client/main.go Jane
 ```
