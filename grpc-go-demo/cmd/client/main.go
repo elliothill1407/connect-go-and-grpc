@@ -13,8 +13,18 @@ import (
 )
 
 func main() {
-	// connect to the gRPC server at localhost on port 8081 without any transport security
-	conn, err := grpc.NewClient("localhost:8081", grpc.WithTransportCredentials(insecure.NewCredentials()))
+	// use the name and address provided as CLI arguments, with defaults
+	name := "Jane"
+	if len(os.Args) > 1 {
+		name = os.Args[1]
+	}
+	addr := "localhost:8081"
+	if len(os.Args) > 2 {
+		addr = os.Args[2]
+	}
+
+	// connect to the server without any transport security
+	conn, err := grpc.NewClient(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
@@ -23,11 +33,6 @@ func main() {
 	// create a new Greet service client using the connection
 	client := greetv1.NewGreetServiceClient(conn)
 
-	// use the name provided as a CLI argument, defaulting to "Jane"
-	name := "Jane"
-	if len(os.Args) > 1 {
-		name = os.Args[1]
-	}
 	req := &greetv1.GreetRequest{Name: name}
 
 	// call the Greet method on the client with a background context and the request
