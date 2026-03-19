@@ -5,6 +5,7 @@ This project demonstrates the implementation of a simple API using two different
 - [`gRPC-go` vs `Connect-go` Demo](#grpc-go-vs-connect-go-demo)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
+  - [Comparison](#comparison)
   - [Features](#features)
   - [Setup](#setup)
   - [Usage](#usage)
@@ -15,6 +16,17 @@ This project demonstrates the implementation of a simple API using two different
 
 ## Introduction
 The purpose of this project is to compare the usage and performance of two popular frameworks for building APIs: `gRPC-go` and `Connect-go`. Both frameworks offer features such as type-safe communication, code generation, and support for multiple programming languages.
+
+## Comparison
+
+|  | gRPC-go | Connect-go |
+|---|---|---|
+| Transport | HTTP/2 only | HTTP/1.1, HTTP/2, HTTP/3 |
+| Wire format | Protobuf binary | Protobuf binary or JSON |
+| Browser compatible | No (requires gRPC-web proxy) | Yes (JSON over HTTP/1.1) |
+| Testable with `curl` | No | Yes |
+| Testable with `grpcurl` | Yes | Yes (speaks gRPC protocol too) |
+| Standard `net/http` middleware | No | Yes |
 
 ## Features
 - gRPC Implementation: Uses gRPC-go to define and implement the greeting service.
