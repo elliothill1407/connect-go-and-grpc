@@ -32,18 +32,18 @@ Before running the examples, ensure you have the following prerequisites install
 ### Running the Servers
 gRPC Server:
 ```bash
-go run ./grpc_server/main.go
+go run ./grpc-go-demo/cmd/server/main.go
 ```
 Connect-go Server:
 ```bash
-go run ./connect_server/main.go
+go run ./connect-go-demo/cmd/server/main.go
 ```
 
 ### Making Requests
 HTTP/cURL Requests
 ```bash
 # gRPC Server (Replace 'Jane' with the desired name)
-grpcurl -plaintext -d '{"name": "Jane"}' localhost:8080 greet.v1.GreetService/Greet
+grpcurl -plaintext -d '{"name": "Jane"}' localhost:8081 greet.v1.GreetService/Greet
 
 # Connect-go Server (Replace 'Jane' with the desired name)
 curl -X POST -H "Content-Type: application/json" -d '{"name": "Jane"}' http://localhost:8080/greet.v1.GreetService/Greet
@@ -51,7 +51,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"name": "Jane"}' http://lo
 gRPC Requests
 ```bash
 # gRPC Server (Replace 'Jane' with the desired name)
-go run ./grpc_client/main.go Jane
+go run ./grpc-go-demo/cmd/client/main.go Jane
 ```
 
 ### Additional Information
