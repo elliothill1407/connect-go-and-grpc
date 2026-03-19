@@ -11,6 +11,7 @@ This project demonstrates the implementation of a simple API using two different
   - [Usage](#usage)
     - [Running the Servers](#running-the-servers)
     - [Making Requests](#making-requests)
+    - [Protocol Interoperability](#protocol-interoperability)
     - [Additional Information](#additional-information)
 
 ## Introduction
@@ -70,6 +71,17 @@ go run ./connect-go-demo/cmd/client/main.go Jane
 # gRPC Server (Replace 'Jane' with the desired name)
 go run ./grpc-go-demo/cmd/client/main.go Jane
 ```
+
+### Protocol Interoperability
+
+Connect-go speaks the gRPC wire protocol natively, so the gRPC-go client works against the Connect-go server without any changes. Start the Connect-go server, then point the gRPC client at it:
+
+```bash
+go run ./grpc-go-demo/cmd/client/main.go Jane localhost:8080
+# 2026/03/19 19:35:12 Greeting: Hello, Jane!
+```
+
+This is the key practical implication of Connect-go: a single server handles gRPC clients, browser clients over JSON, and Connect clients simultaneously on the same port — no proxy required.
 
 ### Regenerating Protobuf Code
 
