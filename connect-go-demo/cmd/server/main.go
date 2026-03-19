@@ -50,9 +50,9 @@ func main() {
 	mux.Handle(path, handler)
 
 	// listen on localhost port 8080
-	http.ListenAndServe(
+	log.Fatal(http.ListenAndServe(
 		"localhost:8080",
 		// Use h2c so we can serve HTTP/2 without TLS.
 		h2c.NewHandler(mux, &http2.Server{}),
-	)
+	))
 }
