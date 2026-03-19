@@ -69,7 +69,24 @@ go run ./connect-go-demo/cmd/client/main.go Jane
 go run ./grpc-go-demo/cmd/client/main.go Jane
 ```
 
+### Regenerating Protobuf Code
+
+The two demos intentionally use different code generation toolchains.
+
+Connect-go uses [Buf](https://buf.build):
+```bash
+cd connect-go-demo && buf generate
+```
+
+gRPC-go uses `protoc` directly:
+```bash
+cd grpc-go-demo
+protoc --go_out=gen --go_opt=paths=source_relative \
+       --go-grpc_out=gen --go-grpc_opt=paths=source_relative \
+       greet/v1/greet.proto
+```
+
 ### Additional Information
-- Both implementations use Protocol Buffers for defining the service schema.
+- Both implementations use the same Protocol Buffers schema to define the service.
 - The client programs demonstrate how to interact with the servers using different frameworks.
 - For more details on each implementation, refer to the respective directories.
