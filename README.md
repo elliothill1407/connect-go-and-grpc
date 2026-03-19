@@ -25,6 +25,7 @@ The purpose of this project is to compare the usage and performance of two popul
 Before running the examples, ensure you have the following prerequisites installed:
 - `Go` (at least one of the last two major releases)
 - `cURL` (for HTTP requests)
+- `grpcurl` (for gRPC requests — `brew install grpcurl` or see [fullstorydev/grpcurl](https://github.com/fullstorydev/grpcurl))
 - Protocol Buffers compiler (`protoc`) and the Go plugins for Protocol Buffers (`protoc-gen-go`)
 
 ## Usage
