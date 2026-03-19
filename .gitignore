@@ -19,3 +19,9 @@
 
 # Go workspace file
 go.work
+
+# Build outputs
+connect-go-demo/server
+connect-go-demo/client
+grpc-go-demo/server
+grpc-go-demo/client
