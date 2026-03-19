@@ -12,7 +12,6 @@ This project demonstrates the implementation of a simple API using two different
     - [Running the Servers](#running-the-servers)
     - [Making Requests](#making-requests)
     - [Additional Information](#additional-information)
-  - [Contributing](#contributing)
 
 ## Introduction
 The purpose of this project is to compare the usage and performance of two popular frameworks for building APIs: `gRPC-go` and `Connect-go`. Both frameworks offer features such as type-safe communication, code generation, and support for multiple programming languages.
@@ -71,6 +70,3 @@ go run ./grpc-go-demo/cmd/client/main.go Jane
 - Both implementations use Protocol Buffers for defining the service schema.
 - The client programs demonstrate how to interact with the servers using different frameworks.
 - For more details on each implementation, refer to the respective directories.
-
-## Contributing
-Contributions are welcome! If you have any suggestions, improvements, or feature requests, feel free to open an issue or create a pull request.
